@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SideNavToggle } from './sidenavtoggle.interface';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'navbar';
+
+  iSideNavCollapsed = false;
+  screenWidth = 0;
+
+  onToggleSideNav(data: SideNavToggle):void{
+    this.screenWidth = data.screenWidth;
+    this.iSideNavCollapsed = data.collapsed;
+  }
+
 }
