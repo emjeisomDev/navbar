@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { navbarData } from './nav-data';
 
 @Component({
   selector: 'app-sidenav',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent {
+
+  colapsed = true;
+  navData = navbarData;
+
+  closeSidenav():void{
+
+  }
+
+  toggleCollapse():void{
+    
+  }
 
 }
