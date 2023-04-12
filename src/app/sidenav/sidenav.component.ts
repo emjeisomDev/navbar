@@ -1,3 +1,4 @@
+import {transition, trigger, style, animate, keyframes} from '@angular/animations';
 import { Component, EventEmitter, Output, OnInit, HostListener } from '@angular/core';
 import { navbarData } from './nav-data';
 import { SideNavToggle } from '../sidenavtoggle.interface';
@@ -5,7 +6,32 @@ import { SideNavToggle } from '../sidenavtoggle.interface';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
+  animations: [
+    trigger('fadeInOut',[
+      transition(':enter', [
+        style({opacity:0}),
+        animate('350ms',
+        style({opacity: 1})
+        )
+      ]),
+      transition(':leave', [
+        style({opacity:1}),
+        animate('350ms',
+        style({opacity: 0})
+        )
+      ])
+    ]),
+    trigger('rotate', [
+      transition(':enter',[
+        animate('1000ms',
+        keyframes([
+          style({transform: 'rotate(0deg)', offset: '0'}),
+          style({transform: 'rotate(2turn)', offset: '1'})
+        ]))
+      ])
+    ])
+  ]
 })
 export class SidenavComponent implements OnInit {
 
