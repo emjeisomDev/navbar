@@ -13,6 +13,7 @@ import { PagesComponent } from './pages/pages.component';
 import { MediasComponent } from './medias/medias.component';
 import { SettingsComponent } from './settings/settings.component';
 import { BodyComponent } from './body/body.component';
+import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { BodyComponent } from './body/body.component';
     PagesComponent,
     MediasComponent,
     SettingsComponent,
-    BodyComponent
+    BodyComponent,
+    SublevelMenuComponent
   ],
   imports: [
     BrowserModule,
