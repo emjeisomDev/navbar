@@ -8,7 +8,17 @@ export const navbarData:INavbarData[] = [
     {
         routeLink: 'products',
         icon: 'fal fa-box-open',
-        label: 'Products'
+        label: 'Products',
+        items: [
+            {
+                routeLink: 'products/level1.1',
+                label: 'Level 1.1'
+            },
+            {
+                routeLink: 'products/level1.2',
+                label: 'Level 1.2'
+            },
+        ]
     },
     {
         routeLink: 'statistics',
@@ -26,7 +36,7 @@ export const navbarData:INavbarData[] = [
             },
             {
                 routeLink: 'coupens/create',
-                label: 'List Coupens'
+                label: 'Create Coupens'
             }
         ]
     },

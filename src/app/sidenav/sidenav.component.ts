@@ -2,6 +2,7 @@ import {transition, trigger, style, animate, keyframes} from '@angular/animation
 import { Component, EventEmitter, Output, OnInit, HostListener } from '@angular/core';
 import { navbarData } from './nav-data';
 import { SideNavToggle } from '../sidenavtoggle.interface';
+import { INavbarData } from './helper';
 
 @Component({
   selector: 'app-sidenav',
@@ -62,6 +63,17 @@ export class SidenavComponent implements OnInit {
   closeSidenav():void{
     this.collapsed = false;
     this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+  }
+
+  handleClick(item: INavbarData): void {
+    if (!this.multiple) {
+      for(let modelItem of this.navData) {
+        if (item !== modelItem && modelItem.expanded) {
+          modelItem.expanded = false;
+        }
+      }
+    }
+    item.expanded = !item.expanded;
   }
 
 }
