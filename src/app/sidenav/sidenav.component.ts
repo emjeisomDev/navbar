@@ -2,27 +2,14 @@ import {transition, trigger, style, animate, keyframes} from '@angular/animation
 import { Component, EventEmitter, Output, OnInit, HostListener } from '@angular/core';
 import { navbarData } from './nav-data';
 import { SideNavToggle } from '../sidenavtoggle.interface';
-import { INavbarData } from './helper';
+import { INavbarData, fadeInOut } from './helper';
 
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
   animations: [
-    trigger('fadeInOut',[
-      transition(':enter', [
-        style({opacity:0}),
-        animate('350ms',
-        style({opacity: 1})
-        )
-      ]),
-      transition(':leave', [
-        style({opacity:1}),
-        animate('350ms',
-        style({opacity: 0})
-        )
-      ])
-    ]),
+    fadeInOut,
     trigger('rotate', [
       transition(':enter',[
         animate('1000ms',
