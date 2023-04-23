@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsComponent } from './products.component';
+import { ProductLevelThreeOneComponent } from './product-level-three-one/product-level-three-one.component';
+import { ProductLevelThreeTwoComponent } from './product-level-three-two/product-level-three-two.component';
 
 const routes: Routes = [
-  {path: 'products', component: ProductsComponent},
+  {path: 'level3.1', component: ProductLevelThreeOneComponent},
+  {path: 'level3.2', component: ProductLevelThreeTwoComponent},
 ];
 
 @NgModule({

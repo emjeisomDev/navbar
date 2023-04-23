@@ -56,6 +56,15 @@ export class SidenavComponent implements OnInit {
   }
 
   handleClick(item: INavbarData): void {
+    this.shrinkItems(item);
+    item.expanded = !item.expanded;
+  }
+
+  getActiveClass(data: INavbarData): string{
+    return this.router.url.includes(data.routeLink) ? 'active' : '';
+  }
+
+  shrinkItems(item: INavbarData): void{
     if (!this.multiple) {
       for(let modelItem of this.navData) {
         if (item !== modelItem && modelItem.expanded) {
@@ -63,11 +72,6 @@ export class SidenavComponent implements OnInit {
         }
       }
     }
-    item.expanded = !item.expanded;
-  }
-
-  getActiveClass(data: INavbarData): string{
-    return this.router.url.includes(data.routeLink) ? 'active' : '';
   }
 
 }
