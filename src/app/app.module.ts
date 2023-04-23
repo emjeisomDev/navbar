@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductsComponent } from './products/products.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { PagesComponent } from './pages/pages.component';
 import { MediasComponent } from './medias/medias.component';
@@ -19,7 +18,6 @@ import { SublevelMenuComponent } from './sidenav/sublevel-menu.component';
     AppComponent,
     SidenavComponent,
     DashboardComponent,
-    ProductsComponent,
     StatisticsComponent,
     PagesComponent,
     MediasComponent,
