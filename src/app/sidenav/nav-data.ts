@@ -74,7 +74,7 @@ export const navbarData:INavbarData[] = [
         routeLink: 'settings',
         icon: 'fal fa-cog',
         label: 'Settings',
-        expanded: true,
+        expanded: false,
         items: [
             {
                 routeLink: 'settings/profile',

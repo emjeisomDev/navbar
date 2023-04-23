@@ -11,7 +11,8 @@
         <ul class="sidenav-nav">
             <li class="sidenav-nav-item" *ngFor="let data of navData">
                 <a class="sidenav-nav-link"  (click)="handleClick(data)"
-                    *ngIf="data.items && data.items.length > 0">
+                    *ngIf="data.items && data.items.length > 0"
+                    [ngClass]="getActiveClass(data)">
                     <i class="sidenav-link-icon" [class]="data.icon"></i>
                     <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed" >{{data.label}}</span>
                     <i *ngIf="data.items && collapsed" class="menu-collapse-icon"

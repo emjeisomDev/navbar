@@ -3,6 +3,7 @@ import { Component, EventEmitter, Output, OnInit, HostListener } from '@angular/
 import { navbarData } from './nav-data';
 import { SideNavToggle } from '../sidenavtoggle.interface';
 import { INavbarData, fadeInOut } from './helper';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -38,6 +39,8 @@ export class SidenavComponent implements OnInit {
     }
   }
 
+  constructor(public router: Router){}
+
   ngOnInit():void{
     this.screenWidth = window.innerWidth;
   }
@@ -61,6 +64,10 @@ export class SidenavComponent implements OnInit {
       }
     }
     item.expanded = !item.expanded;
+  }
+
+  getActiveClass(data: INavbarData): string{
+    return this.router.url.includes(data.routeLink) ? 'active' : '';
   }
 
 }
