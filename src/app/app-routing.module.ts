@@ -13,7 +13,10 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'products', component: ProductsComponent},
   {path: 'statistics', component: StatisticsComponent},
-  {path: 'coupens', component: CoupensComponent},
+  {
+    path: 'coupens', 
+    loadChildren: () => import('./coupens/coupens.module').then(m => m.CoupensModule)
+  },
   {path: 'pages', component: PagesComponent},
   {path: 'media', component: MediasComponent},
   {path: 'settings', component: SettingsComponent}
